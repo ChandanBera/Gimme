@@ -54,9 +54,7 @@ implements View.OnClickListener{
         //starting tracker service
         mSensorService = new SensorService(getCtx());
         mServiceIntent = new Intent(Dashboard.this, mSensorService.getClass());
-        //if (!isMyServiceRunning(mSensorService.getClass())) {
-            //startService(mServiceIntent);
-            startService(new Intent(this, SensorService.class));
+        startService(new Intent(this, SensorService.class));
         //}
 
         rel_notification = (RelativeLayout) findViewById(R.id.rel_notification);
