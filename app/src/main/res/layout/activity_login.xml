@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xentric.gimme.Login">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/gimme_logo"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="345dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_username"
+            android:background="@drawable/inputbox"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:hint="Username"
+            android:textColorHint="@color/colorBlack"
+            android:gravity="center"
+            android:padding="5dp"
+            android:inputType="text"
+            android:imeOptions="actionNext"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_password"
+            android:background="@drawable/inputbox"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:hint="Password"
+            android:textColorHint="@color/colorBlack"
+            android:gravity="center"
+            android:padding="5dp"
+            android:inputType="textPassword"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Forgot Password?"
+            android:id="@+id/tv_forgot_password"
+            android:layout_gravity="right"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:padding="5dp" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="LOGIN"
+            android:id="@+id/btn_login"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/login_btn"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.xentric.gimme.NoPaymentEntryWithUnknownReason">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/header"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/include4" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_reason"
+        android:layout_below="@+id/include4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/autocomplete_background"
+        android:textColor="@color/colorBlack"
+        android:textSize="15dp"
+        android:hint="Please Enter a Reason"
+        android:padding="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="SUBMIT"
+        android:id="@+id/btn_submit"
+        android:layout_below="@+id/et_reason"
+        android:layout_alignLeft="@+id/et_reason"
+        android:layout_alignStart="@+id/et_reason"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/roundbtn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="CANCEL"
+        android:id="@+id/btn_cancel"
+        android:layout_alignTop="@+id/btn_submit"
+        android:layout_alignRight="@+id/et_reason"
+        android:layout_alignEnd="@+id/et_reason"
+        android:background="@drawable/roundbtn" />
+
+</RelativeLayout>

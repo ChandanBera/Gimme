@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xentric.gimme">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+<!--
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.QUICKBOOT_POWERON"/>
+   <!-- <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"
+        tools:ignore="ProtectedPermissions" />-->
+<!--
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+-->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_gimme_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_gimme_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:installLocation="internalOnly"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
+        android:name="androidx.multidex.MultiDexApplication"
+        tools:targetApi="m">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAx_kqIdVOCfbSn4lkeJ_I5UMmh0sZPpYw" />
+        <activity
+            android:name="com.xentric.gimme.Splash"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name="com.xentric.gimme.tracking.SensorService"
+            android:enabled="true"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/my_accessibility_service"/>
+        </service>
+        <activity
+            android:name="com.xentric.gimme.Login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xentric.gimme.Dashboard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xentric.gimme.CollectionEntry"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xentric.gimme.PaymentEntry"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xentric.gimme.NoPaymentEntryWithReason"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xentric.gimme.NoPaymentEntryWithUnknownReason"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xentric.gimme.VisitedClient"
+            android:screenOrientation="landscape" />
+
+        <activity android:name="com.xentric.gimme.ESign"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.xentric.gimme.UploadPic"
+            android:screenOrientation="portrait" />
+
+        <service android:name="com.xentric.gimme.servicehandler.DataCollection" />
+
+        <receiver
+            android:name="com.xentric.gimme.tracking.SensorRestarterBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="RestartServiceWhenStopped">
+            <intent-filter>
+                <action android:name="com.xentric.orderby.tracking.RestartSensor"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.REBOOT"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

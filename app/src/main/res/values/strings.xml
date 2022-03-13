@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Gimme</string>
+    <string name="service_desc">Service Desc</string>
+</resources>

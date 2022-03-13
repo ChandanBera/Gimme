@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.xentric.gimme.CollectionEntry">
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/header"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/include" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include"
+        android:layout_alignLeft="@+id/include"
+        android:layout_alignStart="@+id/include">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_from_date"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/roundbtn"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:hint="From Date"/>
+            <Button
+                android:id="@+id/btn_to_date"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/roundbtn"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:hint="To Date"/>
+        </LinearLayout>
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_customer_name"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:inputType="text"
+            android:hint="START TYPING CUSTOMER NAME"
+            android:background="@drawable/autocomplete_background"
+            android:padding="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="15dp"
+            android:imeOptions="actionDone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monthly Bill Details"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorBlack"
+            android:background="@drawable/roundbtn"
+            android:padding="5dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:weightSum="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:text="Date"
+                android:id="@+id/textView2"
+                android:background="@drawable/roundbtn"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:text="Bill No"
+                android:id="@+id/textView3"
+                android:background="@drawable/roundbtn"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".35"
+                android:text="TotalQuantity"
+                android:id="@+id/textView4"
+                android:background="@drawable/roundbtn"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".25"
+                android:text="Amount"
+                android:id="@+id/textView5"
+                android:background="@drawable/roundbtn"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:background="@android:color/darker_gray">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total:"
+                android:id="@+id/textView6"
+                android:textColor="@color/colorBlack"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_total"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:layout_alignBottom="@+id/textView6"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorBlack" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="3dp"
+            android:background="@android:color/darker_gray"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight=".2"
+                android:background="@drawable/inputbox"
+                android:text="Days Due"
+                android:textColor="@color/colorBlack"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight=".17"
+                android:background="@drawable/inputbox"
+                android:text="30 Days"
+                android:textColor="@color/colorBlack"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight=".17"
+                android:background="@drawable/inputbox"
+                android:text="60 Days"
+                android:textColor="@color/colorBlack"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight=".17"
+                android:background="@drawable/inputbox"
+                android:text="90 Days"
+                android:textColor="@color/colorBlack"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight=".29"
+                android:background="@drawable/inputbox"
+                android:text="Above 90 Days"
+                android:textColor="@color/colorBlack"
+                android:gravity="center_vertical" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".2"
+                android:background="@drawable/inputbox"
+                android:text="Amount"
+                android:textColor="@color/colorBlack"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/val_30"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".17"
+                android:background="@drawable/inputbox"
+                android:textColor="@color/colorBlack"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/val_60"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".17"
+                android:background="@drawable/inputbox"
+                android:textColor="@color/colorBlack"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/val_90"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".17"
+                android:background="@drawable/inputbox"
+                android:textColor="@color/colorBlack"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/val_a90"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".29"
+                android:background="@drawable/inputbox"
+                android:textColor="@color/colorBlack"
+                android:gravity="center_vertical" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="3dp"
+            android:background="@android:color/darker_gray"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="3dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        
+        <Button
+            android:id="@+id/btn_payment_entry"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".48"
+            android:background="@drawable/roundbtn"
+            android:text="Payment Entry"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".04"/>
+
+        <Button
+            android:id="@+id/btn_no_payment_entry"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".48"
+            android:background="@drawable/roundbtn"
+            android:text="No Payment Entry"/>
+    </LinearLayout>
+
+</RelativeLayout>

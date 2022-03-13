@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xentric.gimme.Splash"
+    android:background="@color/colorWhite">
+
+    <include
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/header"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:orientation="vertical">
+
+
+
+       <!-- <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_reason"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/autocomplete_background"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="20dp"
+            android:hint="Please Select Your Reason"
+            android:textColor="@color/colorBlack"
+            android:textSize="15dp"
+            android:visibility="gone"/>-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <Button
+            android:text="SUBMIT"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/btn_submit"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/roundbtn"
+            android:layout_marginTop="30dp"/>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
